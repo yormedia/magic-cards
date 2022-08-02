@@ -1,4 +1,4 @@
-import{o as e,l as t,_ as i,a as d,s as o,b as n,e as r,c as a,i as l,t as c,d as s,$ as m,r as p,w as h,f as u,g as f,A as g,n as b}from"./boilerplate-card-c6cccb50.js";
+import{o as e,l as t,_ as i,a as d,s as o,b as n,e as r,c as a,i as l,t as c,d as s,$ as m,r as p,w as h,f as u,g as f,A as g,n as b}from"./magic-card-7673cf87.js";
 /**
  * @license
  * Copyright 2017 Google LLC
@@ -918,4 +918,4 @@ const ui=p`.mdc-floating-label{-moz-osx-font-smoothing:grayscale;-webkit-font-sm
     mwc-switch {
       --mdc-theme-secondary: var(--switch-checked-color);
     }
-  `,n([r({attribute:!1})],gi.prototype,"hass",void 0),n([u()],gi.prototype,"_config",void 0),n([u()],gi.prototype,"_helpers",void 0),gi=n([b("boilerplate-card-editor")],gi);export{gi as BoilerplateCardEditor};
+  `,n([r({attribute:!1})],gi.prototype,"hass",void 0),n([u()],gi.prototype,"_config",void 0),n([u()],gi.prototype,"_helpers",void 0),gi=n([b("magic-card-editor")],gi);export{gi as magicCardEditor};
