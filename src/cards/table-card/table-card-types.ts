@@ -1,14 +1,15 @@
 import { ActionConfig, LovelaceCard, LovelaceCardConfig, LovelaceCardEditor } from 'custom-card-helpers';
+import { PREFIX_NAME } from '../../constants';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'magic-card-editor': LovelaceCardEditor;
+    "magic-table-card-editor" : LovelaceCardEditor;
     'hui-error-card': LovelaceCard;
   }
 }
 
 // TODO Add your configuration elements here for type-checking
-export interface magicCardConfig extends LovelaceCardConfig {
+export interface magicTableCardConfig extends LovelaceCardConfig {
   type: string;
   name?: string;
   show_warning?: boolean;

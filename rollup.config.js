@@ -39,7 +39,7 @@ const plugins = [
 
 export default [
   {
-    input: 'src/magic-card.ts',
+    input: 'src/index.ts',
     output: {
       dir: 'dist',
       format: 'es',
