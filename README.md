@@ -1,4 +1,4 @@
-# magic Card by [@iantrich](https://www.github.com/iantrich)
+# magic cards by [@yormedia](https://www.github.com/yormedia)
 
 A community driven magic of best practices for Home Assistant Lovelace custom cards
 
