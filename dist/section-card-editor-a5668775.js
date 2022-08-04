@@ -1,4 +1,4 @@
-import{$ as e,n as i,r as t,_ as s,e as o,t as a,a as n,s as c}from"./index-6b697cfe.js";import{e as r,t as l,s as h,a as d,f as g}from"./textfield-9779224a.js";let f=class extends(r(c)){constructor(){super(...arguments),this._initialized=!1}setConfig(e){this._config=e,this.loadCardHelpers()}shouldUpdate(){return this._initialized||this._initialize(),!0}get _name(){var e;return(null===(e=this._config)||void 0===e?void 0:e.name)||""}get _entity(){var e;return(null===(e=this._config)||void 0===e?void 0:e.entity)||""}get _show_warning(){var e;return(null===(e=this._config)||void 0===e?void 0:e.show_warning)||!1}get _show_error(){var e;return(null===(e=this._config)||void 0===e?void 0:e.show_error)||!1}render(){if(!this.hass||!this._helpers)return e``;const i=Object.keys(this.hass.states);return e`
+import{$ as e,n as i,r as t,_ as s,e as o,t as n,a,s as c}from"./index-7eba1132.js";import{e as r,t as l,s as h,a as d,f as g}from"./textfield-84fd7ede.js";let f=class extends(r(c)){constructor(){super(...arguments),this._initialized=!1}setConfig(e){this._config=e,this.loadCardHelpers()}shouldUpdate(){return this._initialized||this._initialize(),!0}get _name(){var e;return(null===(e=this._config)||void 0===e?void 0:e.name)||""}get _entity(){var e;return(null===(e=this._config)||void 0===e?void 0:e.entity)||""}get _show_warning(){var e;return(null===(e=this._config)||void 0===e?void 0:e.show_warning)||!1}get _show_error(){var e;return(null===(e=this._config)||void 0===e?void 0:e.show_error)||!1}render(){if(!this.hass||!this._helpers)return e``;const i=Object.keys(this.hass.states);return e`
       <mwc-select
         naturalMenuWidth
         fixedMenuPosition
@@ -42,4 +42,4 @@ import{$ as e,n as i,r as t,_ as s,e as o,t as a,a as n,s as c}from"./index-6b69
     mwc-switch {
       --mdc-theme-secondary: var(--switch-checked-color);
     }
-  `,s([o({attribute:!1})],f.prototype,"hass",void 0),s([a()],f.prototype,"_config",void 0),s([a()],f.prototype,"_helpers",void 0),f=s([n("magic-table-card-editor")],f);export{f as magicTableCardEditor};
+  `,s([o({attribute:!1})],f.prototype,"hass",void 0),s([n()],f.prototype,"_config",void 0),s([n()],f.prototype,"_helpers",void 0),f=s([a("magic-section-card-editor")],f);export{f as magicSectionCardEditor};

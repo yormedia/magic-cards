@@ -1,1 +1,1 @@
-export{k as MagicSectionCard,M as MagicTableCard}from"./index-6b697cfe.js";
+export{k as MagicSectionCard,M as MagicTableCard}from"./index-7eba1132.js";
