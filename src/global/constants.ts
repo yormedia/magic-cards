@@ -17,7 +17,7 @@ export function getCardData(cardType: string) {
         description: '',
         editor: {
             name: `${bundle.prefix}-${cardType.toLowerCase()}-card-editor`,
-            file: `./${bundle.prefix}-${cardType.toLowerCase()}-card-editor`
+            file: `./${cardType.toLowerCase()}-card-editor`
         }
     }
 }

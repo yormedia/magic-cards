@@ -2,6 +2,9 @@
 import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
 import { HomeAssistant, fireEvent, LovelaceCardEditor } from 'custom-card-helpers';
 
+import {getCardData} from "../../global/constants";
+const card = getCardData('section');
+
 import { ScopedRegistryHost } from '@lit-labs/scoped-registry-mixin';
 import { magicSectionCardConfig } from './section-card-types';
 import { customElement, property, state } from 'lit/decorators';
@@ -10,7 +13,7 @@ import { selectDefinition } from '../../../elements/select';
 import { switchDefinition } from '../../../elements/switch';
 import { textfieldDefinition } from '../../../elements/textfield';
 
-@customElement('magic-section-card-editor')
+@customElement(card.editor.name)
 export class magicSectionCardEditor extends ScopedRegistryHost(LitElement) implements LovelaceCardEditor {
     @property({ attribute: false }) public hass?: HomeAssistant;
 
@@ -87,14 +90,14 @@ export class magicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
       ></mwc-textfield>
       <mwc-formfield .label=${`Toggle warning ${this._show_warning ? 'off' : 'on'}`}>
         <mwc-switch
-          .checked=${this._show_warning !== false}
+          .checked=${(this._show_warning)}
           .configValue=${'show_warning'}
           @change=${this._valueChanged}
         ></mwc-switch>
       </mwc-formfield>
       <mwc-formfield .label=${`Toggle error ${this._show_error ? 'off' : 'on'}`}>
         <mwc-switch
-          .checked=${this._show_error !== false}
+          .checked=${(this._show_error)}
           .configValue=${'show_error'}
           @change=${this._valueChanged}
         ></mwc-switch>
