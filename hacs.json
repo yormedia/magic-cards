@@ -1,6 +1,6 @@
 {
-    "name": "magic Card",
-    "filename": "magic-card.js",
+    "name": "Magic Card",
+    "filename": "index.js",
     "home-assistant": "2022.4.0",
     "render_readme": true
 }
