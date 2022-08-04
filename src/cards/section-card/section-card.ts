@@ -29,8 +29,8 @@ registerCustomCard({
 export class MagicSectionCard extends LitElement {
     public static async getConfigElement(): Promise<LovelaceCardEditor> {
         console.log(card.editor);
-        await import(card.editor.file);
-        return document.createElement(`${card.editor.prefixedname}`) as LovelaceCardEditor;
+        await import("./section-card-editor");
+        return document.createElement(card.editor.prefixedname) as LovelaceCardEditor;
     }
 
     public static getStubConfig(): Record<string, unknown> {
