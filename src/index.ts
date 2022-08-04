@@ -1,6 +1,6 @@
 import {bundle} from './global/constants';
 
-export { MagicTableCard } from "./cards/table-card/table-card";
+// export { MagicTableCard } from "./cards/table-card/table-card";
 export { MagicSectionCard } from "./cards/section-card/section-card";
 
 /* eslint no-console: 0 */
