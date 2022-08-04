@@ -1,5 +1,5 @@
 var name = "magic-cards";
-var version = "1.0.0b15";
+var version = "1.0.0b16";
 
 function capitalize(string) {
     console.log(string);
@@ -16,12 +16,12 @@ const bundle = {
 };
 function getCardData(cardType) {
     return {
-        name: `${bundle.prefix.toLowerCase()}-${cardType.toLowerCase()}-card`,
+        name: `${bundle.prefix}-${cardType.toLowerCase()}-card`,
         title: `${bundle.title} ${capitalize(cardType)} Card`,
         description: '',
         editor: {
-            name: `${bundle.prefix}-${cardType.toLowerCase()}-card-editor`,
-            file: `./${cardType.toLowerCase()}-card-editor`
+            name: `${cardType.toLowerCase()}-card-editor`,
+            file: `./${cardType.toLowerCase()}-card-editor` // ./<cardtype>-card-editor
         }
     };
 }
