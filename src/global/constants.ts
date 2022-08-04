@@ -4,7 +4,7 @@ import {capitalize} from "../functions/string";
 const packageName = name.split("-");
 
 export const bundle = {
-    name: name.replace("-"," "),
+    name: capitalize(packageName[0]),
     title: `${capitalize(packageName[0])} ${capitalize(packageName[1])}`,
     prefix: name.split("-", 1)[0].toLowerCase(),
     version: version

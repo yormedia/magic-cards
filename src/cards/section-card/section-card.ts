@@ -28,6 +28,7 @@ registerCustomCard({
 @customElement(card.name)
 export class MagicSectionCard extends LitElement {
     public static async getConfigElement(): Promise<LovelaceCardEditor> {
+        console.log(card);
         await import(card.editor.file);
         return document.createElement(`${card.editor.name}`) as LovelaceCardEditor;
     }
@@ -36,7 +37,7 @@ export class MagicSectionCard extends LitElement {
         return {};
     }
 
-    // TODO Add any properities that should cause your element to re-render here
+    // TODO Add any properties that should cause your element to re-render here
     // https://lit.dev/docs/components/properties/
     @property({ attribute: false }) public hass!: HomeAssistant;
 
