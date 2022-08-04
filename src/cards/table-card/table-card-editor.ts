@@ -2,6 +2,9 @@
 import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
 import { HomeAssistant, fireEvent, LovelaceCardEditor } from 'custom-card-helpers';
 
+import {getCardData} from "../../global/constants";
+const card = getCardData('table');
+
 import { ScopedRegistryHost } from '@lit-labs/scoped-registry-mixin';
 import { magicTableCardConfig } from './table-card-types';
 import { customElement, property, state } from 'lit/decorators';
@@ -10,7 +13,7 @@ import { selectDefinition } from '../../../elements/select';
 import { switchDefinition } from '../../../elements/switch';
 import { textfieldDefinition } from '../../../elements/textfield';
 
-@customElement('magic-table-card-editor')
+@customElement(card.editor.name)
 export class magicTableCardEditor extends ScopedRegistryHost(LitElement) implements LovelaceCardEditor {
     @property({ attribute: false }) public hass?: HomeAssistant;
 
