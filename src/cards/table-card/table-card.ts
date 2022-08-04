@@ -25,10 +25,10 @@ registerCustomCard({
     description: card.description
 });
 
-console.log(card.name);
 @customElement(card.name)
 export class MagicTableCard extends LitElement {
     public static async getConfigElement(): Promise<LovelaceCardEditor> {
+        console.log(card.editor.name);
         await import(card.editor.file);
         return document.createElement(`${card.editor.name}`) as LovelaceCardEditor;
     }

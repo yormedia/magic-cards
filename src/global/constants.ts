@@ -4,7 +4,7 @@ import {capitalize} from "../functions/string";
 const packageName = name.split("-");
 
 export const bundle = {
-    name: name[0],
+    name: name.replace("-"," "),
     title: `${capitalize(packageName[0])} ${capitalize(packageName[1])}`,
     prefix: name.split("-", 1)[0].toLowerCase(),
     version: version
@@ -12,8 +12,8 @@ export const bundle = {
 
 export function getCardData(cardType: string) {
     return {
-        name: `${bundle.prefix}`.toLowerCase() + `-${cardType.toLowerCase()}-card`,
-        title: `${bundle.title} ${capitalize(cardType)}` + `Card`,
+        name: `${bundle.prefix.toLowerCase()}-${cardType.toLowerCase()}-card`,
+        title: `${bundle.title} ${capitalize(cardType)} Card`,
         description: '',
         editor: {
             name: `${bundle.prefix}-${cardType.toLowerCase()}-card-editor`,

@@ -1,21 +1,23 @@
 var name = "magic-cards";
-var version = "1.0.0b11";
+var version = "1.0.0b12";
 
 function capitalize(string) {
+    console.log(string);
+    console.log(string.charAt(0).toUpperCase() + string.slice(1));
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 const packageName = name.split("-");
 const bundle = {
-    name: name[0],
+    name: name.replace("-", " "),
     title: `${capitalize(packageName[0])} ${capitalize(packageName[1])}`,
     prefix: name.split("-", 1)[0].toLowerCase(),
     version: version
 };
 function getCardData(cardType) {
     return {
-        name: `${bundle.prefix}`.toLowerCase() + `-${cardType.toLowerCase()}-card`,
-        title: `${bundle.title} ${capitalize(cardType)}` + `Card`,
+        name: `${bundle.prefix.toLowerCase()}-${cardType.toLowerCase()}-card`,
+        title: `${bundle.title} ${capitalize(cardType)} Card`,
         description: '',
         editor: {
             name: `${bundle.prefix}-${cardType.toLowerCase()}-card-editor`,
@@ -320,9 +322,9 @@ registerCustomCard({
     name: card$1.title,
     description: card$1.description
 });
-console.log(card$1.name);
 let MagicTableCard = class MagicTableCard extends s {
     static async getConfigElement() {
+        console.log(card$1.editor.name);
         await import(card$1.editor.file);
         return document.createElement(`${card$1.editor.name}`);
     }
