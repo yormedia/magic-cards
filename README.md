@@ -1,4 +1,4 @@
-# magic cards by [@yormedia](https://www.github.com/yormedia)
+# Magic Cards by [@yormedia](https://www.github.com/yormedia)
 
 A community driven magic of best practices for Home Assistant Lovelace custom cards
 
@@ -21,6 +21,7 @@ Hey buddy! Help me out for a couple of :beers: or a :coffee:!
 ## Cards
 
 ### Table Card
+### Section Card
 
 ## Options
 

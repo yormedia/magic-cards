@@ -11,7 +11,7 @@ import {
     LovelaceCardEditor
 } from "custom-card-helpers";
 import {magicTableCardConfig} from "./table-card-types";
-import {actionHandler} from "../../../cards/action-handler-directive";
+import {actionHandler} from "./table-action-handler-directive";
 
 import { localize } from '../../localize';
 

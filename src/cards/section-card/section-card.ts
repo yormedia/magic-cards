@@ -11,7 +11,7 @@ import {
     LovelaceCardEditor
 } from "custom-card-helpers";
 import {magicSectionCardConfig} from "./section-card-types";
-import {actionHandler} from "../../../cards/action-handler-directive";
+import {actionHandler} from "./section-action-handler-directive";
 
 import { localize } from '../../localize';
 
