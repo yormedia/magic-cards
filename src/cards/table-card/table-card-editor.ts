@@ -24,7 +24,7 @@ export class magicTableCardEditor extends ScopedRegistryHost(LitElement) impleme
         ...textfieldDefinition,
         ...selectDefinition,
         ...switchDefinition,
-        ...formfieldDefinition,
+        ...formfieldDefinition
     };
 
     public setConfig(config: magicTableCardConfig): void {

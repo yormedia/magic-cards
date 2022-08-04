@@ -12,22 +12,23 @@ import {
 } from "custom-card-helpers";
 import {magicSectionCardConfig} from "./section-card-types";
 import {actionHandler} from "./section-action-handler-directive";
+import {registerCustomCard} from "../../global/customCards";
+import {CARD_DESCRIPTION, CARD_EDITOR_FILE, CARD_EDITOR_NAME, CARD_NAME, CARD_TITLE} from "./constants";
 
 import { localize } from '../../localize';
+import {PREFIX_NAME} from "../../global/constants";
 
-(window as any).customCards = (window as any).customCards || [];
-(window as any).customCards.push({
-    type: 'magic-section-card',
-    name: 'Section Card',
-    description: 'A section card that ...',
-    // TODO: Create a better description
+registerCustomCard({
+    type: CARD_NAME,
+    name: CARD_TITLE,
+    description: CARD_DESCRIPTION
 });
 
-@customElement('magic-section-card')
+@customElement(CARD_NAME)
 export class MagicSectionCard extends LitElement {
     public static async getConfigElement(): Promise<LovelaceCardEditor> {
-        await import('./section-card-editor');
-        return document.createElement('magic-section-card-editor');
+        await import(CARD_EDITOR_FILE);
+        return document.createElement(`${PREFIX_NAME}-${CARD_EDITOR_NAME}`) as LovelaceCardEditor;
     }
 
     public static getStubConfig(): Record<string, unknown> {

@@ -1,4 +1,4 @@
-import { NAME, VERSION } from './constants';
+import { NAME, VERSION } from './global/constants';
 
 export { MagicTableCard } from "./cards/table-card/table-card";
 export { MagicSectionCard } from "./cards/section-card/section-card";
