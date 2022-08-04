@@ -1,1 +1,1 @@
-console.info("%c 🪄 magic-cards 🪄 \n%c 1.4.3","color: black; font-weight: bold; background: orange");
+export{h as MagicSectionCard,M as MagicTableCard}from"./index-af6182d1.js";
