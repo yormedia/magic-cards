@@ -3,7 +3,9 @@ interface RegisterCardParams {
     name: string;
     description: string;
 }
+
 export function registerCustomCard(params: RegisterCardParams) {
+    console.log(params);
     const windowWithCards = window as unknown as Window & {
         customCards: unknown[];
     };

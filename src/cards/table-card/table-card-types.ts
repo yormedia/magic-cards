@@ -1,5 +1,4 @@
 import { ActionConfig, LovelaceCard, LovelaceCardConfig, LovelaceCardEditor } from 'custom-card-helpers';
-import { PREFIX_NAME } from '../../global/constants';
 
 declare global {
   interface HTMLElementTagNameMap {

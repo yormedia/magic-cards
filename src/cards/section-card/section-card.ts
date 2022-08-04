@@ -1,5 +1,8 @@
 // This puts your card into the UI card picker dialog
 
+import {getCardData} from "../../global/constants";
+const card = getCardData('section');
+
 import {customElement, property, state} from "lit/decorators";
 import {css, CSSResultGroup, html, LitElement, PropertyValues, TemplateResult} from "lit";
 import {
@@ -10,25 +13,23 @@ import {
     HomeAssistant,
     LovelaceCardEditor
 } from "custom-card-helpers";
+
 import {magicSectionCardConfig} from "./section-card-types";
 import {actionHandler} from "./section-action-handler-directive";
 import {registerCustomCard} from "../../global/customCards";
-import {CARD_DESCRIPTION, CARD_EDITOR_FILE, CARD_EDITOR_NAME, CARD_NAME, CARD_TITLE} from "./constants";
-
-import { localize } from '../../localize';
-import {PREFIX_NAME} from "../../global/constants";
+import {localize} from '../../localize';
 
 registerCustomCard({
-    type: CARD_NAME,
-    name: CARD_TITLE,
-    description: CARD_DESCRIPTION
+    type: card.name,
+    name: card.title,
+    description: card.description
 });
 
-@customElement(CARD_NAME)
+@customElement(card.name)
 export class MagicSectionCard extends LitElement {
     public static async getConfigElement(): Promise<LovelaceCardEditor> {
-        await import(CARD_EDITOR_FILE);
-        return document.createElement(`${PREFIX_NAME}-${CARD_EDITOR_NAME}`) as LovelaceCardEditor;
+        await import(card.editor.file);
+        return document.createElement(`${card.editor.name}`) as LovelaceCardEditor;
     }
 
     public static getStubConfig(): Record<string, unknown> {
@@ -53,7 +54,7 @@ export class MagicSectionCard extends LitElement {
         }
 
         this.config = {
-            name: 'magic-section',
+            name: card.name,
             ...config,
         };
     }
@@ -87,7 +88,7 @@ export class MagicSectionCard extends LitElement {
             hasDoubleClick: hasAction(this.config.double_tap_action),
         })}
         tabindex="0"
-        .label=${`magic-section: ${this.config.entity || 'No Entity Defined'}`}
+        .label=${`${card.name}: ${this.config.entity || 'No Entity Defined'}`}
       ></ha-card>
     `;
     }
