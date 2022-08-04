@@ -20,17 +20,17 @@ import {registerCustomCard} from "../../global/customCards";
 import {localize} from '../../localize';
 
 registerCustomCard({
-    type: card.name,
-    name: card.title,
+    type: card.type,
+    name: card.name,
     description: card.description
 });
 
-@customElement(card.name)
+@customElement(card.type)
 export class MagicSectionCard extends LitElement {
     public static async getConfigElement(): Promise<LovelaceCardEditor> {
-        console.log(card);
+        console.log(card.editor);
         await import(card.editor.file);
-        return document.createElement(`${card.editor.name}`) as LovelaceCardEditor;
+        return document.createElement(`${card.editor.prefixedname}`) as LovelaceCardEditor;
     }
 
     public static getStubConfig(): Record<string, unknown> {
@@ -55,7 +55,7 @@ export class MagicSectionCard extends LitElement {
         }
 
         this.config = {
-            name: card.name,
+            name: card.type,
             ...config,
         };
     }
@@ -89,7 +89,7 @@ export class MagicSectionCard extends LitElement {
             hasDoubleClick: hasAction(this.config.double_tap_action),
         })}
         tabindex="0"
-        .label=${`${card.name}: ${this.config.entity || 'No Entity Defined'}`}
+        .label=${`${card.type}: ${this.config.entity || 'No Entity Defined'}`}
       ></ha-card>
     `;
     }

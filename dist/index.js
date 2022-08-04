@@ -16,11 +16,12 @@ const bundle = {
 };
 function getCardData(cardType) {
     return {
-        name: `${bundle.prefix}-${cardType.toLowerCase()}-card`,
-        title: `${bundle.title} ${capitalize(cardType)} Card`,
+        type: `${bundle.prefix}-${cardType.toLowerCase()}-card`,
+        name: `${bundle.title} ${capitalize(cardType)} Card`,
         description: '',
         editor: {
             name: `${cardType.toLowerCase()}-card-editor`,
+            prefixedname: `${bundle.prefix}-${cardType.toLowerCase()}-card-editor`,
             file: `./${cardType.toLowerCase()}-card-editor` // ./<cardtype>-card-editor
         }
     };
@@ -318,15 +319,15 @@ function localize(string, search = '', replace = '') {
 // This puts your card into the UI card picker dialog
 const card = getCardData('section');
 registerCustomCard({
-    type: card.name,
-    name: card.title,
+    type: card.type,
+    name: card.name,
     description: card.description
 });
 let MagicSectionCard = class MagicSectionCard extends s {
     static async getConfigElement() {
-        console.log(card);
+        console.log(card.editor);
         await import(card.editor.file);
-        return document.createElement(`${card.editor.name}`);
+        return document.createElement(`${card.editor.prefixedname}`);
     }
     static getStubConfig() {
         return {};
@@ -340,7 +341,7 @@ let MagicSectionCard = class MagicSectionCard extends s {
         if (config.test_gui) {
             ke().setEditMode(true);
         }
-        this.config = Object.assign({ name: card.name }, config);
+        this.config = Object.assign({ name: card.type }, config);
     }
     // https://lit.dev/docs/components/lifecycle/#reactive-update-cycle-performing
     shouldUpdate(changedProps) {
@@ -367,7 +368,7 @@ let MagicSectionCard = class MagicSectionCard extends s {
             hasDoubleClick: ve(this.config.double_tap_action),
         })}
         tabindex="0"
-        .label=${`${card.name}: ${this.config.entity || 'No Entity Defined'}`}
+        .label=${`${card.type}: ${this.config.entity || 'No Entity Defined'}`}
       ></ha-card>
     `;
     }
@@ -400,7 +401,7 @@ __decorate([
     t$3()
 ], MagicSectionCard.prototype, "config", void 0);
 MagicSectionCard = __decorate([
-    n$5(card.name)
+    n$5(card.type)
 ], MagicSectionCard);
 
 /* eslint no-console: 0 */

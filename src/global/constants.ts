@@ -12,12 +12,13 @@ export const bundle = {
 
 export function getCardData(cardType: string) {
     return {
-        name: `${bundle.prefix}-${cardType.toLowerCase()}-card`,                // magic-<cardtype>-card
-        title: `${bundle.title} ${capitalize(cardType)} Card`,                  // Magic <Cardname> Card
+        type: `${bundle.prefix}-${cardType.toLowerCase()}-card`,                // magic-<cardtype>-card
+        name: `${bundle.title} ${capitalize(cardType)} Card`,                   // Magic <Cardname> Card
         description: '',
         editor: {
-            name: `${cardType.toLowerCase()}-card-editor`,                      // <cardtype>-card-editor
-            file: `./${cardType.toLowerCase()}-card-editor`                     // ./<cardtype>-card-editor
+            name: `${cardType.toLowerCase()}-card-editor`,                          // <cardtype>-card-editor
+            prefixedname: `${bundle.prefix}-${cardType.toLowerCase()}-card-editor`, // magic-<cardtype>-card-editor
+            file: `./${cardType.toLowerCase()}-card-editor`                         // ./<cardtype>-card-editor
         }
     }
 }
