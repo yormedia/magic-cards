@@ -6,7 +6,8 @@ import {getCardData} from "../../global/constants";
 const card = getCardData('section');
 
 import { ScopedRegistryHost } from '@lit-labs/scoped-registry-mixin';
-import { magicSectionCardConfig } from './section-card-types';
+import { MagicSectionCardConfig } from './types';
+
 import { customElement, property, state } from 'lit/decorators';
 import { formfieldDefinition } from '../../../elements/formfield';
 import { selectDefinition } from '../../../elements/select';
@@ -14,10 +15,10 @@ import { switchDefinition } from '../../../elements/switch';
 import { textfieldDefinition } from '../../../elements/textfield';
 
 @customElement(card.editor.name)
-export class magicSectionCardEditor extends ScopedRegistryHost(LitElement) implements LovelaceCardEditor {
+export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) implements LovelaceCardEditor {
     @property({ attribute: false }) public hass?: HomeAssistant;
 
-    @state() private _config?: magicSectionCardConfig;
+    @state() private _config?: MagicSectionCardConfig;
 
     @state() private _helpers?: any;
 
@@ -30,7 +31,7 @@ export class magicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
         ...formfieldDefinition,
     };
 
-    public setConfig(config: magicSectionCardConfig): void {
+    public setConfig(config: MagicSectionCardConfig): void {
         this._config = config;
 
         this.loadCardHelpers();
@@ -90,14 +91,14 @@ export class magicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
       ></mwc-textfield>
       <mwc-formfield .label=${`Toggle warning ${this._show_warning ? 'off' : 'on'}`}>
         <mwc-switch
-          .checked=${(this._show_warning)}
+          .checked=${this._show_warning !== false}
           .configValue=${'show_warning'}
           @change=${this._valueChanged}
         ></mwc-switch>
       </mwc-formfield>
       <mwc-formfield .label=${`Toggle error ${this._show_error ? 'off' : 'on'}`}>
         <mwc-switch
-          .checked=${(this._show_error)}
+          .checked=${this._show_error !== false}
           .configValue=${'show_error'}
           @change=${this._valueChanged}
         ></mwc-switch>

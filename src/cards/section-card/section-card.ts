@@ -10,12 +10,12 @@ import {
     getLovelace, handleAction,
     hasAction,
     hasConfigOrEntityChanged,
-    HomeAssistant,
+    HomeAssistant, LovelaceCard,
     LovelaceCardEditor
 } from "custom-card-helpers";
 
-import {magicSectionCardConfig} from "./section-card-types";
-import {actionHandler} from "./section-action-handler-directive";
+import {MagicSectionCardConfig} from "./types";
+import {actionHandler} from "./action-handler-directive";
 import {registerCustomCard} from "../../global/customCards";
 import {localize} from '../../localize';
 
@@ -26,10 +26,9 @@ registerCustomCard({
 });
 
 @customElement(card.type)
-export class MagicSectionCard extends LitElement {
+export class MagicSectionCard extends LitElement implements LovelaceCard {
     public static async getConfigElement(): Promise<LovelaceCardEditor> {
-        console.log(card.editor);
-        await import("./section-card-editor");
+        await import("./editor");
         return document.createElement(card.editor.prefixedname) as LovelaceCardEditor;
     }
 
@@ -41,10 +40,15 @@ export class MagicSectionCard extends LitElement {
     // https://lit.dev/docs/components/properties/
     @property({ attribute: false }) public hass!: HomeAssistant;
 
-    @state() private config!: magicSectionCardConfig;
+    @state() private config!: MagicSectionCardConfig;
+
+    getCardSize(): number | Promise<number> {
+        return 1;
+    }
 
     // https://lit.dev/docs/components/properties/#accessors-custom
-    public setConfig(config: magicSectionCardConfig): void {
+
+    setConfig(config: MagicSectionCardConfig): void {
         // TODO Check for required fields and that they are of the proper format
         if (!config) {
             throw new Error(localize('common.invalid_configuration'));

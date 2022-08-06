@@ -70,7 +70,7 @@ class ActionHandler extends HTMLElement implements ActionHandler {
     element.actionHandler = true;
 
     element.addEventListener('contextmenu', (ev: Event) => {
-      const e = ev || window.event;
+      const e = ev || Event;
       if (e.preventDefault) {
         e.preventDefault();
       }
@@ -78,7 +78,7 @@ class ActionHandler extends HTMLElement implements ActionHandler {
         e.stopPropagation();
       }
       e.cancelBubble = true;
-      e.returnValue = false;
+      e.preventDefault();
       return false;
     });
 
@@ -128,7 +128,7 @@ class ActionHandler extends HTMLElement implements ActionHandler {
     };
 
     const handleEnter = (ev: KeyboardEvent): void => {
-      if (ev.keyCode !== 13) {
+      if (ev.code !== "13") {
         return;
       }
       end(ev);
