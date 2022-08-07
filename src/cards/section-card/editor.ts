@@ -22,6 +22,9 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
 
     @state() private _helpers?: any;
 
+    @state() _selectedTab = 0;
+    @state() _selectedCard = 0;
+
     private _initialized = false;
 
     static elementDefinitions = {
@@ -30,6 +33,10 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
         ...switchDefinition,
         ...formfieldDefinition,
     };
+
+    _handleSwitchTab(ev: CustomEvent) {
+        this._selectedTab = parseInt(ev.detail.index, 10);
+    }
 
     public setConfig(config: MagicSectionCardConfig): void {
         this._config = config;
@@ -70,6 +77,16 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
         const entities = Object.keys(this.hass.states);
 
         return html`
+        <div class="toolbar">
+          <mwc-tab-bar
+            .activeIndex=${this._selectedTab}
+            @MDCTabBar:activated=${this._handleSwitchTab}
+          >
+            <mwc-tab .label=${"Data"}></mwc-tab>
+              <mwc-tab .label=${"Sections"}></mwc-tab>
+              <mwc-tab .label=${"Design"}></mwc-tab>
+          </mwc-tab-bar>
+        </div>
       <mwc-select
         naturalMenuWidth
         fixedMenuPosition
@@ -105,6 +122,33 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
       </mwc-formfield>
     `;
     }
+
+    // _renderLayoutEditor() {
+    //     const schema = this._schema(this.hass.localize);
+    //     const data = {
+    //         ...this._config,
+    //     };
+    //     return html`
+    //   <p>
+    //     See
+    //     <a
+    //       href="https://github.com/thomasloven/lovelace-layout-card"
+    //       target="_blank"
+    //       rel="no referrer"
+    //     >
+    //       layout-card on github
+    //     </a>
+    //     for usage instructions.
+    //   </p>
+    //   <ha-form
+    //     .hass=${this.hass}
+    //     .data=${data}
+    //     .schema=${schema}
+    //     .computeLabel=${this._computeLabel}
+    //     @value-changed=${this._valueChanged}
+    //   ></ha-form>
+    // `;
+    // }
 
     private _initialize(): void {
         if (this.hass === undefined) return;
