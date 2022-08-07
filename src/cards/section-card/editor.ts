@@ -82,9 +82,8 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
             .activeIndex=${this._selectedTab}
             @MDCTabBar:activated=${this._handleSwitchTab}
           >
-            <mwc-tab label="Data"></mwc-tab>
-            <mwc-tab label="Sections"></mwc-tab>
-            <mwc-tab label="Design"></mwc-tab>
+              <mwc-tab .label=${"Layout"}></mwc-tab>
+              <mwc-tab .label=${"Cards"}></mwc-tab>
           </mwc-tab-bar>
         </div>
       <mwc-select
