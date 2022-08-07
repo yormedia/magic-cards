@@ -77,16 +77,16 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
         const entities = Object.keys(this.hass.states);
 
         return html`
-<!--        <div class="toolbar">-->
+        <div class="toolbar">
           <mwc-tab-bar
             .activeIndex=${this._selectedTab}
             @MDCTabBar:activated=${this._handleSwitchTab}
           >
-            <mwc-tab .label=${"Data"}></mwc-tab>
-              <mwc-tab .label=${"Sections"}></mwc-tab>
-              <mwc-tab .label=${"Design"}></mwc-tab>
+            <mwc-tab .label="Data"></mwc-tab>
+            <mwc-tab .label="Sections"></mwc-tab>
+            <mwc-tab .label="Design"></mwc-tab>
           </mwc-tab-bar>
-<!--        </div>-->
+        </div>
       <mwc-select
         naturalMenuWidth
         fixedMenuPosition
@@ -195,6 +195,20 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
     }
     mwc-switch {
       --mdc-theme-secondary: var(--switch-checked-color);
+    }
+    mwc-tab-bar {
+      border-bottom: 1px solid var(--divider-color);
+    }
+    .layout,
+    .cards #editor {
+      margin-top: 8px;
+      border: 1px solid var(--divider-color);
+      padding: 12px;
+    }
+    .cards .toolbar {
+      display: flex;
+      --paper-tabs-selection-bar-color: var(--primary-color);
+      --paper-tab-ink: var(--primary-color);
     }
   `;
 }
