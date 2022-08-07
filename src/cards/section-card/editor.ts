@@ -77,48 +77,52 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
         const entities = Object.keys(this.hass.states);
 
         return html`
-        <div class="toolbar">
-          <mwc-tab-bar
-            .activeIndex=${this._selectedTab}
-            @MDCTabBar:activated=${this._handleSwitchTab}
-          >
-              <mwc-tab .label=${"Layout"}></mwc-tab>
-              <mwc-tab .label=${"Cards"}></mwc-tab>
-          </mwc-tab-bar>
+        <div class="card-config">
+            <div class="toolbar">
+              <mwc-tab-bar
+                .activeIndex=${this._selectedTab}
+                @MDCTabBar:activated=${this._handleSwitchTab}
+              >
+                  <mwc-tab .label=${"Layout"}></mwc-tab>
+                  <mwc-tab .label=${"Cards"}></mwc-tab>
+              </mwc-tab-bar>
+            </div>
         </div>
-      <mwc-select
-        naturalMenuWidth
-        fixedMenuPosition
-        label="Entity (Required)"
-        .configValue=${'entity'}
-        .value=${this._entity}
-        @selected=${this._valueChanged}
-        @closed=${(ev) => ev.stopPropagation()}
-      >
-        ${entities.map((entity) => {
-            return html`<mwc-list-item .value=${entity}>${entity}</mwc-list-item>`;
-        })}
-      </mwc-select>
-      <mwc-textfield
-        label="Name (Optional)"
-        .value=${this._name}
-        .configValue=${'name'}
-        @input=${this._valueChanged}
-      ></mwc-textfield>
-      <mwc-formfield .label=${`Toggle warning ${this._show_warning ? 'off' : 'on'}`}>
-        <mwc-switch
-          .checked=${(this._show_warning)}
-          .configValue=${'show_warning'}
-          @change=${this._valueChanged}
-        ></mwc-switch>
-      </mwc-formfield>
-      <mwc-formfield .label=${`Toggle error ${this._show_error ? 'off' : 'on'}`}>
-        <mwc-switch
-          .checked=${(this._show_error)}
-          .configValue=${'show_error'}
-          @change=${this._valueChanged}
-        ></mwc-switch>
-      </mwc-formfield>
+        <div id="editor">
+          <mwc-select
+            naturalMenuWidth
+            fixedMenuPosition
+            label="Entity (Required)"
+            .configValue=${'entity'}
+            .value=${this._entity}
+            @selected=${this._valueChanged}
+            @closed=${(ev) => ev.stopPropagation()}
+          >
+            ${entities.map((entity) => {
+                return html`<mwc-list-item .value=${entity}>${entity}</mwc-list-item>`;
+            })}
+          </mwc-select>
+          <mwc-textfield
+            label="Name (Optional)"
+            .value=${this._name}
+            .configValue=${'name'}
+            @input=${this._valueChanged}
+          ></mwc-textfield>
+          <mwc-formfield .label=${`Toggle warning ${this._show_warning ? 'off' : 'on'}`}>
+            <mwc-switch
+              .checked=${(this._show_warning)}
+              .configValue=${'show_warning'}
+              @change=${this._valueChanged}
+            ></mwc-switch>
+          </mwc-formfield>
+          <mwc-formfield .label=${`Toggle error ${this._show_error ? 'off' : 'on'}`}>
+            <mwc-switch
+              .checked=${(this._show_error)}
+              .configValue=${'show_error'}
+              @change=${this._valueChanged}
+            ></mwc-switch>
+          </mwc-formfield>
+        </div>
     `;
     }
 

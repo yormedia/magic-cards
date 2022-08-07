@@ -14,6 +14,7 @@ const dev = process.env.ROLLUP_WATCH;
 
 const serveopts = {
   contentBase: ['./dist'],
+  file: "magic-cards.js",
   host: '10.35.15.4',
   port: 5000,
   allowCrossOrigin: true,
@@ -39,9 +40,10 @@ const plugins = [
 
 export default [
   {
-    input: 'src/index.ts',
+    input: 'src/magic-cards.ts',
     output: {
       dir: 'dist',
+      // file: "magic-cards.js",
       format: 'es',
     },
     plugins: [...plugins],
