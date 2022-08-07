@@ -1,4 +1,4 @@
-import { o as o$2, l as l$2, i as i$2, _ as __extends, a as __assign, s as s$1, b as __decorate, e as e$4, c as e$5, d as i$3, t, f as b, $, r, w, g as t$1, h as __values, j as getCardData, n as ne, k as n } from './index-7f3f622a.js';
+import { o as o$2, l as l$2, i as i$2, _ as __extends, a as __assign, s as s$1, b as __decorate, e as e$4, c as e$5, d as i$3, t, f as b, $, r, w, g as t$1, h as __values, j as getCardData, n as ne, k as n } from './index-bc9c0ab1.js';
 
 /**
  * @license
@@ -8502,14 +8502,14 @@ let MagicSectionCardEditor = class MagicSectionCardEditor extends e$1(s$1) {
       ></mwc-textfield>
       <mwc-formfield .label=${`Toggle warning ${this._show_warning ? 'off' : 'on'}`}>
         <mwc-switch
-          .checked=${this._show_warning !== false}
+          .checked=${(this._show_warning)}
           .configValue=${'show_warning'}
           @change=${this._valueChanged}
         ></mwc-switch>
       </mwc-formfield>
       <mwc-formfield .label=${`Toggle error ${this._show_error ? 'off' : 'on'}`}>
         <mwc-switch
-          .checked=${this._show_error !== false}
+          .checked=${(this._show_error)}
           .configValue=${'show_error'}
           @change=${this._valueChanged}
         ></mwc-switch>
@@ -8573,7 +8573,7 @@ __decorate([
     t$1()
 ], MagicSectionCardEditor.prototype, "_helpers", void 0);
 MagicSectionCardEditor = __decorate([
-    n(card.editor.name)
+    n(card.editor.prefixedtype)
 ], MagicSectionCardEditor);
 
 export { MagicSectionCardEditor };

@@ -8,17 +8,22 @@ export const bundle = {
     title: `${capitalize(packageName[0])} ${capitalize(packageName[1])}`,       // Magic Cards
     prefix: name.split("-", 1)[0].toLowerCase(),                                // magic
     version: version
-}
+};
 
 export function getCardData(cardType: string) {
     return {
-        type: `${bundle.prefix}-${cardType.toLowerCase()}-card`,                // magic-<cardtype>-card
-        name: `${bundle.title} ${capitalize(cardType)} Card`,                   // Magic <Cardname> Card
+        // magic-<cardtype>-card
+        type: `${bundle.prefix}-${cardType.toLowerCase()}-card`,
+        // Magic <Cardname> Card
+        name: `${bundle.title} ${capitalize(cardType)} Card`,
         description: '',
         editor: {
-            name: `${cardType.toLowerCase()}-card-editor`,                          // <cardtype>-card-editor
-            prefixedname: `${bundle.prefix}-${cardType.toLowerCase()}-card-editor`, // magic-<cardtype>-card-editor
-            file: `./${cardType.toLowerCase()}-card-editor`                         // ./<cardtype>-card-editor
+            // <cardtype>-card-editor
+            type: `${cardType.toLowerCase()}-card-editor`,
+            // magic-<cardtype>-card-editor
+            prefixedtype: `${bundle.prefix}-${cardType.toLowerCase()}-card-editor`,
+            // ./<cardtype>-card-editor
+            file: `./${cardType.toLowerCase()}-card-editor`
         }
-    }
+    };
 }

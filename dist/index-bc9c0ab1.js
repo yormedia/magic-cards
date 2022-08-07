@@ -1,5 +1,5 @@
 var name = "magic-cards";
-var version = "1.0.0b17";
+var version = "1.0.0b18";
 
 function capitalize(string) {
     console.log(string);
@@ -16,13 +16,18 @@ const bundle = {
 };
 function getCardData(cardType) {
     return {
+        // magic-<cardtype>-card
         type: `${bundle.prefix}-${cardType.toLowerCase()}-card`,
+        // Magic <Cardname> Card
         name: `${bundle.title} ${capitalize(cardType)} Card`,
         description: '',
         editor: {
-            name: `${cardType.toLowerCase()}-card-editor`,
-            prefixedname: `${bundle.prefix}-${cardType.toLowerCase()}-card-editor`,
-            file: `./${cardType.toLowerCase()}-card-editor` // ./<cardtype>-card-editor
+            // <cardtype>-card-editor
+            type: `${cardType.toLowerCase()}-card-editor`,
+            // magic-<cardtype>-card-editor
+            prefixedtype: `${bundle.prefix}-${cardType.toLowerCase()}-card-editor`,
+            // ./<cardtype>-card-editor
+            file: `./${cardType.toLowerCase()}-card-editor`
         }
     };
 }
@@ -370,8 +375,8 @@ registerCustomCard({
 });
 let MagicSectionCard = class MagicSectionCard extends s {
     static async getConfigElement() {
-        await import('./editor-0b733713.js');
-        return document.createElement(card.editor.prefixedname);
+        await import('./editor-247e3609.js');
+        return document.createElement(card.editor.prefixedtype);
     }
     static getStubConfig() {
         return {};

@@ -14,7 +14,7 @@ import { selectDefinition } from '../../../elements/select';
 import { switchDefinition } from '../../../elements/switch';
 import { textfieldDefinition } from '../../../elements/textfield';
 
-@customElement(card.editor.name)
+@customElement(card.editor.prefixedtype)
 export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) implements LovelaceCardEditor {
     @property({ attribute: false }) public hass?: HomeAssistant;
 
@@ -91,14 +91,14 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
       ></mwc-textfield>
       <mwc-formfield .label=${`Toggle warning ${this._show_warning ? 'off' : 'on'}`}>
         <mwc-switch
-          .checked=${this._show_warning !== false}
+          .checked=${(this._show_warning)}
           .configValue=${'show_warning'}
           @change=${this._valueChanged}
         ></mwc-switch>
       </mwc-formfield>
       <mwc-formfield .label=${`Toggle error ${this._show_error ? 'off' : 'on'}`}>
         <mwc-switch
-          .checked=${this._show_error !== false}
+          .checked=${(this._show_error)}
           .configValue=${'show_error'}
           @change=${this._valueChanged}
         ></mwc-switch>

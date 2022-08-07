@@ -29,7 +29,7 @@ registerCustomCard({
 export class MagicSectionCard extends LitElement implements LovelaceCard {
     public static async getConfigElement(): Promise<LovelaceCardEditor> {
         await import("./editor");
-        return document.createElement(card.editor.prefixedname) as LovelaceCardEditor;
+        return document.createElement(card.editor.prefixedtype) as LovelaceCardEditor;
     }
 
     public static getStubConfig(): Record<string, unknown> {
