@@ -24,6 +24,8 @@
     "@material/mwc-ripple": "^0.26.1",
     "@material/mwc-select": "^0.26.1",
     "@material/mwc-switch": "^0.26.1",
+    "@material/mwc-tab": "^0.26.1",
+    "@material/mwc-tab-bar": "^0.26.1",
     "@material/mwc-textfield": "^0.26.1",
     "custom-card-helpers": "^1.7.2",
     "home-assistant-js-websocket": "^7.1.0",

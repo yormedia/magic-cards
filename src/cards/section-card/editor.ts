@@ -77,7 +77,7 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
         const entities = Object.keys(this.hass.states);
 
         return html`
-        <div class="toolbar">
+<!--        <div class="toolbar">-->
           <mwc-tab-bar
             .activeIndex=${this._selectedTab}
             @MDCTabBar:activated=${this._handleSwitchTab}
@@ -86,7 +86,7 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
               <mwc-tab .label=${"Sections"}></mwc-tab>
               <mwc-tab .label=${"Design"}></mwc-tab>
           </mwc-tab-bar>
-        </div>
+<!--        </div>-->
       <mwc-select
         naturalMenuWidth
         fixedMenuPosition

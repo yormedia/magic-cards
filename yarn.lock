@@ -704,6 +704,52 @@
     "lit" "^2.0.0"
     "tslib" "^2.0.1"
 
+"@material/mwc-tab-bar@^0.26.1":
+  "integrity" "sha512-QAbU6WphHkH+oaZ4LEzRJlNeS6iZdupEW9HWWCX2zmMIi6NotgmtnzHK0w6rk+L67fvjH2fhdL4B8ftGePy6aw=="
+  "resolved" "https://registry.npmjs.org/@material/mwc-tab-bar/-/mwc-tab-bar-0.26.1.tgz"
+  "version" "0.26.1"
+  dependencies:
+    "@material/mwc-base" "^0.26.1"
+    "@material/mwc-tab" "^0.26.1"
+    "@material/mwc-tab-scroller" "^0.26.1"
+    "@material/tab" "=14.0.0-canary.53b3cad2f.0"
+    "@material/tab-bar" "=14.0.0-canary.53b3cad2f.0"
+    "lit" "^2.0.0"
+    "tslib" "^2.0.1"
+
+"@material/mwc-tab-indicator@^0.26.1":
+  "integrity" "sha512-IK4gE26ECZd9Wqgva5Y31dWs636KmcU2xVBulPf3REAQmAa5UeyyyCZFbhTPksp5R1fgULv+SWo8pk+tLYwfqg=="
+  "resolved" "https://registry.npmjs.org/@material/mwc-tab-indicator/-/mwc-tab-indicator-0.26.1.tgz"
+  "version" "0.26.1"
+  dependencies:
+    "@material/mwc-base" "^0.26.1"
+    "@material/tab-indicator" "=14.0.0-canary.53b3cad2f.0"
+    "lit" "^2.0.0"
+    "tslib" "^2.0.1"
+
+"@material/mwc-tab-scroller@^0.26.1":
+  "integrity" "sha512-cIlZnS3c6kxQo0jkJY2giLDvUviJMkLRnLVj6Sm+R7Ou0Xrz4dOTYbCzqQmz8pE2OBT45wAv3GDU/+nzcYuAPw=="
+  "resolved" "https://registry.npmjs.org/@material/mwc-tab-scroller/-/mwc-tab-scroller-0.26.1.tgz"
+  "version" "0.26.1"
+  dependencies:
+    "@material/dom" "=14.0.0-canary.53b3cad2f.0"
+    "@material/mwc-base" "^0.26.1"
+    "@material/tab-scroller" "=14.0.0-canary.53b3cad2f.0"
+    "lit" "^2.0.0"
+    "tslib" "^2.0.1"
+
+"@material/mwc-tab@^0.26.1":
+  "integrity" "sha512-ea4IBj6R6Ch0DTa4oCQ6vBPYqwV9f/i8ULuy2fnc/YOyO5X+MSJrd5WRk93+XcQcEoajQMFLjnrrilg/u7lbVw=="
+  "resolved" "https://registry.npmjs.org/@material/mwc-tab/-/mwc-tab-0.26.1.tgz"
+  "version" "0.26.1"
+  dependencies:
+    "@material/mwc-base" "^0.26.1"
+    "@material/mwc-ripple" "^0.26.1"
+    "@material/mwc-tab-indicator" "^0.26.1"
+    "@material/tab" "=14.0.0-canary.53b3cad2f.0"
+    "lit" "^2.0.0"
+    "tslib" "^2.0.1"
+
 "@material/mwc-textfield@^0.26.1":
   "integrity" "sha512-Kdb31R2PROUOM7hpyjb+pY4WIOu6BQSEQKeVy4hnLqwvhe14nTvnn9I7Fkkz4t9SNWPh3G+DQsAx9vhPuCgUyQ=="
   "resolved" "https://registry.npmjs.org/@material/mwc-textfield/-/mwc-textfield-0.26.1.tgz"
@@ -821,6 +867,62 @@
     "@material/shape" "14.0.0-canary.53b3cad2f.0"
     "@material/theme" "14.0.0-canary.53b3cad2f.0"
     "@material/tokens" "14.0.0-canary.53b3cad2f.0"
+    "tslib" "^2.1.0"
+
+"@material/tab-bar@=14.0.0-canary.53b3cad2f.0":
+  "integrity" "sha512-qLTxl0SWwSpsWBV5o7fMO4HaA3NSCTroM+qkUJYNq7lumMXxax8XP6+GvgbXXfsF1K6VqwSPJHnFt5g1kvtBOA=="
+  "resolved" "https://registry.npmjs.org/@material/tab-bar/-/tab-bar-14.0.0-canary.53b3cad2f.0.tgz"
+  "version" "14.0.0-canary.53b3cad2f.0"
+  dependencies:
+    "@material/animation" "14.0.0-canary.53b3cad2f.0"
+    "@material/base" "14.0.0-canary.53b3cad2f.0"
+    "@material/density" "14.0.0-canary.53b3cad2f.0"
+    "@material/elevation" "14.0.0-canary.53b3cad2f.0"
+    "@material/feature-targeting" "14.0.0-canary.53b3cad2f.0"
+    "@material/tab" "14.0.0-canary.53b3cad2f.0"
+    "@material/tab-indicator" "14.0.0-canary.53b3cad2f.0"
+    "@material/tab-scroller" "14.0.0-canary.53b3cad2f.0"
+    "@material/theme" "14.0.0-canary.53b3cad2f.0"
+    "@material/typography" "14.0.0-canary.53b3cad2f.0"
+    "tslib" "^2.1.0"
+
+"@material/tab-indicator@=14.0.0-canary.53b3cad2f.0", "@material/tab-indicator@14.0.0-canary.53b3cad2f.0":
+  "integrity" "sha512-CMh5MuQamk10oYs0NpQwJ+JLPcY+WftU1b2NpAxbke+6yaV0XrcEkymSfHDkMB5itDvtpXR4fe2Yw9wO8gvcgg=="
+  "resolved" "https://registry.npmjs.org/@material/tab-indicator/-/tab-indicator-14.0.0-canary.53b3cad2f.0.tgz"
+  "version" "14.0.0-canary.53b3cad2f.0"
+  dependencies:
+    "@material/animation" "14.0.0-canary.53b3cad2f.0"
+    "@material/base" "14.0.0-canary.53b3cad2f.0"
+    "@material/feature-targeting" "14.0.0-canary.53b3cad2f.0"
+    "@material/theme" "14.0.0-canary.53b3cad2f.0"
+    "tslib" "^2.1.0"
+
+"@material/tab-scroller@=14.0.0-canary.53b3cad2f.0", "@material/tab-scroller@14.0.0-canary.53b3cad2f.0":
+  "integrity" "sha512-eJJWfNDSdjrRVNHkSecblN26PtM8rTeK2FqcZh3iCYRZ74ywhKmHF+elrM2KRH8ez+u/YcZoQacgS8rX3v6ygw=="
+  "resolved" "https://registry.npmjs.org/@material/tab-scroller/-/tab-scroller-14.0.0-canary.53b3cad2f.0.tgz"
+  "version" "14.0.0-canary.53b3cad2f.0"
+  dependencies:
+    "@material/animation" "14.0.0-canary.53b3cad2f.0"
+    "@material/base" "14.0.0-canary.53b3cad2f.0"
+    "@material/dom" "14.0.0-canary.53b3cad2f.0"
+    "@material/feature-targeting" "14.0.0-canary.53b3cad2f.0"
+    "@material/tab" "14.0.0-canary.53b3cad2f.0"
+    "tslib" "^2.1.0"
+
+"@material/tab@=14.0.0-canary.53b3cad2f.0", "@material/tab@14.0.0-canary.53b3cad2f.0":
+  "integrity" "sha512-Vmjugm9TBF906pNE2kORSDcMUYXQXV+uspFdbyoSH3hVOTjX+Bw+ODL9agW+pDsJRqGMLO/BAoZ0YQDCrCNX/A=="
+  "resolved" "https://registry.npmjs.org/@material/tab/-/tab-14.0.0-canary.53b3cad2f.0.tgz"
+  "version" "14.0.0-canary.53b3cad2f.0"
+  dependencies:
+    "@material/base" "14.0.0-canary.53b3cad2f.0"
+    "@material/elevation" "14.0.0-canary.53b3cad2f.0"
+    "@material/feature-targeting" "14.0.0-canary.53b3cad2f.0"
+    "@material/focus-ring" "14.0.0-canary.53b3cad2f.0"
+    "@material/ripple" "14.0.0-canary.53b3cad2f.0"
+    "@material/rtl" "14.0.0-canary.53b3cad2f.0"
+    "@material/tab-indicator" "14.0.0-canary.53b3cad2f.0"
+    "@material/theme" "14.0.0-canary.53b3cad2f.0"
+    "@material/typography" "14.0.0-canary.53b3cad2f.0"
     "tslib" "^2.1.0"
 
 "@material/textfield@=14.0.0-canary.53b3cad2f.0":
