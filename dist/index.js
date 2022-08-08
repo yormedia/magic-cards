@@ -1,1 +1,1 @@
-export{M as MagicSectionCard}from"./index-311e0ed3.js";
+export{M as MagicSectionCard}from"./index-05f8063c.js";
