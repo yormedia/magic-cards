@@ -1,12 +1,9 @@
 import { name, version } from "../../package.json";
 import {capitalize} from "../functions/string";
 
-const packageName = name.split("-");
-
 export const bundle = {
-    name: capitalize(packageName[0]),                                           // Magic
-    title: `${capitalize(packageName[0])} ${capitalize(packageName[1])}`,       // Magic Cards
-    prefix: name.split("-", 1)[0].toLowerCase(),                                // magic
+    name: capitalize(name),             // Magic
+    prefix: name.toLowerCase(),         // magic
     version: version
 };
 
@@ -15,7 +12,7 @@ export function getCardData(cardType: string) {
         // magic-<cardtype>-card
         type: `${bundle.prefix}-${cardType.toLowerCase()}-card`,
         // Magic <Cardname> Card
-        name: `${bundle.title} ${capitalize(cardType)} Card`,
+        name: `${bundle.name} ${capitalize(cardType)} Card`,
         description: '',
         editor: {
             // <cardtype>-card-editor
