@@ -13,6 +13,9 @@ import { formfieldDefinition } from '../../../elements/formfield';
 import { selectDefinition } from '../../../elements/select';
 import { switchDefinition } from '../../../elements/switch';
 import { textfieldDefinition } from '../../../elements/textfield';
+import {localize} from "../../localize";
+
+const DEFAULT_LAYOUT_TYPES = ["masonry", "sidebar", "panel"];
 
 @customElement(card.editor.prefixedtype)
 export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) implements LovelaceCardEditor {
@@ -68,39 +71,45 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
         return this._config?.show_error || false;
     }
 
+
     protected render(): TemplateResult | void {
         if (!this.hass || !this._helpers) {
             return html``;
         }
 
-        // You can restrict on domain type
-        const entities = Object.keys(this.hass.states);
 
         return html`
-        <div class="card-config">
+          <div class="card-config">
             <div class="toolbar">
               <mwc-tab-bar
                 .activeIndex=${this._selectedTab}
                 @MDCTabBar:activated=${this._handleSwitchTab}
               >
-                  <mwc-tab label="Design">
-                      <button role="tab" aria-selected="true" tabindex="0" class="mdc-tab mdc-tab--active">
-                        <span class="mdc-tab__content">
-                            <span class="mdc-tab__text-label">Design</span>
-                        </span>
-                        <mwc-ripple primary=""></mwc-ripple>
-                      </button>
-                  </mwc-tab>
-                  <mwc-tab label="Sections">
-                      <button role="tab" aria-selected="true" tabindex="0" class="mdc-tab mdc-tab--active">
-                        <span class="mdc-tab__content">
-                            <span class="mdc-tab__text-label">Section</span>
-                        </span>
-                          <mwc-ripple primary=""></mwc-ripple>
-                      </button>
-                  </mwc-tab>
+                <mwc-tab .label=${"Data"}></mwc-tab>
+                <mwc-tab .label=${"Design"}></mwc-tab>
               </mwc-tab-bar>
             </div>
+            <div id="editor">
+              ${[this._renderDataEditor, this._renderDesignEditor][
+                this._selectedTab
+                ].bind(this)()}
+            </div>
+          </div>
+    `;
+    }
+
+    _renderDataEditor() {
+        // You can restrict on domain type
+        if (!this.hass || !this._helpers) {
+            return html``;
+        }
+
+        const entities = Object.keys(this.hass.states);
+        const data = {
+            ...this._config,
+        };
+        return html`        
+        <div class="card-config">
             <div id="editor">
               <mwc-select
                 naturalMenuWidth
@@ -112,8 +121,8 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
                 @closed=${(ev) => ev.stopPropagation()}
               >
                 ${entities.map((entity) => {
-                    return html`<mwc-list-item .value=${entity}>${entity}</mwc-list-item>`;
-                })}
+            return html`<mwc-list-item .value=${entity}>${entity}</mwc-list-item>`;
+        })}
               </mwc-select>
               <mwc-textfield
                 label="Name (Optional)"
@@ -140,32 +149,13 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
     `;
     }
 
-    // _renderLayoutEditor() {
-    //     const schema = this._schema(this.hass.localize);
-    //     const data = {
-    //         ...this._config,
-    //     };
-    //     return html`
-    //   <p>
-    //     See
-    //     <a
-    //       href="https://github.com/thomasloven/lovelace-layout-card"
-    //       target="_blank"
-    //       rel="no referrer"
-    //     >
-    //       layout-card on github
-    //     </a>
-    //     for usage instructions.
-    //   </p>
-    //   <ha-form
-    //     .hass=${this.hass}
-    //     .data=${data}
-    //     .schema=${schema}
-    //     .computeLabel=${this._computeLabel}
-    //     @value-changed=${this._valueChanged}
-    //   ></ha-form>
-    // `;
-    // }
+    _renderDesignEditor() {
+        const selected = this._selectedCard;
+        // const numcards = this._config.cards.length;
+        return html`
+      <p>Hello I am the design tab.</p>
+    `;
+    }
 
     private _initialize(): void {
         if (this.hass === undefined) return;
@@ -226,6 +216,11 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
       display: flex;
       --paper-tabs-selection-bar-color: var(--primary-color);
       --paper-tab-ink: var(--primary-color);
+    }
+    paper-tabs {
+      display: flex;
+      font-size: 14px;
+      flex-grow: 1;
     }
   `;
 }
