@@ -9,6 +9,8 @@ import ignore from './rollup-plugins/ignore';
 import { ignoreTextfieldFiles } from './elements/ignore/textfield';
 import { ignoreSelectFiles } from './elements/ignore/select';
 import { ignoreSwitchFiles } from './elements/ignore/switch';
+import { ignoreTabFiles } from './elements/ignore/tab';
+import { ignoreTabBarFiles } from './elements/ignore/tab-bar';
 
 const dev = process.env.ROLLUP_WATCH;
 
@@ -34,7 +36,7 @@ const plugins = [
   dev && serve(serveopts),
   !dev && terser(),
   ignore({
-    files: [...ignoreTextfieldFiles, ...ignoreSelectFiles, ...ignoreSwitchFiles].map((file) => require.resolve(file)),
+    files: [...ignoreTextfieldFiles, ...ignoreSelectFiles, ...ignoreSwitchFiles, ...ignoreTabFiles, ...ignoreTabBarFiles].map((file) => require.resolve(file)),
   }),
 ];
 

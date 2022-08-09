@@ -13,6 +13,8 @@ import { formfieldDefinition } from '../../../elements/formfield';
 import { selectDefinition } from '../../../elements/select';
 import { switchDefinition } from '../../../elements/switch';
 import { textfieldDefinition } from '../../../elements/textfield';
+import { tabDefinition } from '../../../elements/tab';
+import { tabbarDefinition } from '../../../elements/tab-bar';
 import {localize} from "../../localize";
 
 const DEFAULT_LAYOUT_TYPES = ["masonry", "sidebar", "panel"];
@@ -34,6 +36,8 @@ export class MagicSectionCardEditor extends LitElement {
         ...textfieldDefinition,
         ...selectDefinition,
         ...switchDefinition,
+        ...tabDefinition,
+        ...tabbarDefinition,
         ...formfieldDefinition,
     };
 
