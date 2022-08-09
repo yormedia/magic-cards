@@ -18,7 +18,7 @@ import {localize} from "../../localize";
 const DEFAULT_LAYOUT_TYPES = ["masonry", "sidebar", "panel"];
 
 @customElement(card.editor.prefixedtype)
-export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) implements LovelaceCardEditor {
+export class MagicSectionCardEditor extends LitElement {
     @property({ attribute: false }) public hass?: HomeAssistant;
 
     @state() private _config?: MagicSectionCardConfig;
