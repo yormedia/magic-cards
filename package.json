@@ -1,7 +1,7 @@
 {
-  "name": "magic-cards",
-  "version": "1.0.0b21",
-  "description": "Dashboard Magic Cards",
+  "name": "magic",
+  "version": "1.0.0b22",
+  "description": "Dashboard Magic",
   "keywords": [
     "home-assistant",
     "homeassistant",
