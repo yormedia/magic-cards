@@ -85,7 +85,7 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
                 .activeIndex=${this._selectedTab}
                 @MDCTabBar:activated=${this._handleSwitchTab}
               >
-                <mwc-tab label="Data">
+                <mwc-tab .label=${"Data"}>
                     <button role="tab" aria-selected="true" tabindex="0" class="mdc-tab mdc-tab--active">
                     <span class="mdc-tab__content">
                         <span class="mdc-tab__text-label">Design</span>
@@ -93,7 +93,7 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) imple
                         <mwc-ripple primary=""></mwc-ripple>
                     </button>
                 </mwc-tab>
-                <mwc-tab label="Design">
+                <mwc-tab .label=${"Design"}>
                       <button role="tab" aria-selected="true" tabindex="0" class="mdc-tab mdc-tab--active">
                         <span class="mdc-tab__content">
                             <span class="mdc-tab__text-label">Section</span>
