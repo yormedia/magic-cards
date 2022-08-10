@@ -13,8 +13,7 @@ import { formfieldDefinition } from '../../../elements/formfield';
 import { selectDefinition } from '../../../elements/select';
 import { switchDefinition } from '../../../elements/switch';
 import { textfieldDefinition } from '../../../elements/textfield';
-// import { tabDefinition } from '../../../elements/tab';
-// import { tabbarDefinition } from '../../../elements/tab-bar';
+
 import {localize} from "../../localize";
 
 // const DEFAULT_LAYOUT_TYPES = ["masonry", "sidebar", "panel"];
@@ -36,8 +35,6 @@ export class MagicSectionCardEditor extends LitElement {
         ...textfieldDefinition,
         ...selectDefinition,
         ...switchDefinition,
-        // ...tabDefinition,
-        // ...tabbarDefinition,
         ...formfieldDefinition,
     };
 
@@ -171,7 +168,7 @@ export class MagicSectionCardEditor extends LitElement {
         const selected = this._selectedCard;
         // const numcards = this._config.cards.length;
         return html`
-      <p>Hello I am the design tab.</p>
+      <p>Hello I am the design tab. Yeah!</p>
     `;
     }
 
