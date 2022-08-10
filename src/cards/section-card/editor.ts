@@ -37,7 +37,7 @@ export class MagicSectionCardEditor extends LitElement {
         ...selectDefinition,
         ...switchDefinition,
         // ...tabDefinition,
-        ...tabbarDefinition,
+        // ...tabbarDefinition,
         ...formfieldDefinition,
     };
 

@@ -36,7 +36,7 @@ const plugins = [
   dev && serve(serveopts),
   !dev && terser(),
   ignore({
-    files: [...ignoreTextfieldFiles, ...ignoreSelectFiles, ...ignoreSwitchFiles, ...ignoreTabFiles, ...ignoreTabBarFiles].map((file) => require.resolve(file)),
+    files: [...ignoreTextfieldFiles, ...ignoreSelectFiles, ...ignoreSwitchFiles].map((file) => require.resolve(file)),
   }),
 ];
 
