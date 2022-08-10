@@ -13,8 +13,8 @@ import { formfieldDefinition } from '../../../elements/formfield';
 import { selectDefinition } from '../../../elements/select';
 import { switchDefinition } from '../../../elements/switch';
 import { textfieldDefinition } from '../../../elements/textfield';
-// import { tabDefinition } from '../../../elements/tab';
-import { tabbarDefinition } from '../../../elements/tab-bar';
+import { tabDefinition } from '../../../elements/tab';
+// import { tabbarDefinition } from '../../../elements/tab-bar';
 
 import {localize} from "../../localize";
 
@@ -37,8 +37,8 @@ export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) {
         ...textfieldDefinition,
         ...selectDefinition,
         ...switchDefinition,
-        // ...tabDefinition,
-        ...tabbarDefinition,
+        ...tabDefinition,
+        // ...tabbarDefinition,
         ...formfieldDefinition,
     };
 
