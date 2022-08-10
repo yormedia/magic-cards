@@ -1,1 +1,1 @@
-export const ignoreTabFiles = ['@material/mwc-tab/mwc-tab.js'];
+export const ignoreTabFiles = ['@material/mwc-notched-outline/mwc-notched-outline.js'];

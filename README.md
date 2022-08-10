@@ -3,7 +3,8 @@
 A community driven magic of best practices for Home Assistant Lovelace custom cards
 
 [![GitHub Release][releases-shield]][releases]
-[![License][license-shield]](LICENSE.md)
+
+[//]: # ([![License][license-shield]]&#40;LICENSE.md&#41;)
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
 
 ![Project Maintenance][maintenance-shield]
