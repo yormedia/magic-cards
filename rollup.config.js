@@ -9,8 +9,8 @@ import ignore from './rollup-plugins/ignore';
 import { ignoreTextfieldFiles } from './elements/ignore/textfield';
 import { ignoreSelectFiles } from './elements/ignore/select';
 import { ignoreSwitchFiles } from './elements/ignore/switch';
-import { ignoreTabFiles } from './elements/ignore/tab';
-import { ignoreTabBarFiles } from './elements/ignore/tab-bar';
+// import { ignoreTabFiles } from './elements/ignore/tab';
+// import { ignoreTabBarFiles } from './elements/ignore/tab-bar';
 
 const dev = process.env.ROLLUP_WATCH;
 

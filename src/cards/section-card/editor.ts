@@ -14,10 +14,10 @@ import { selectDefinition } from '../../../elements/select';
 import { switchDefinition } from '../../../elements/switch';
 import { textfieldDefinition } from '../../../elements/textfield';
 // import { tabDefinition } from '../../../elements/tab';
-import { tabbarDefinition } from '../../../elements/tab-bar';
+// import { tabbarDefinition } from '../../../elements/tab-bar';
 import {localize} from "../../localize";
 
-const DEFAULT_LAYOUT_TYPES = ["masonry", "sidebar", "panel"];
+// const DEFAULT_LAYOUT_TYPES = ["masonry", "sidebar", "panel"];
 
 @customElement(card.editor.prefixedtype)
 export class MagicSectionCardEditor extends LitElement {
