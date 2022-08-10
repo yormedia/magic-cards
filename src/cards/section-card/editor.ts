@@ -13,13 +13,12 @@ import { formfieldDefinition } from '../../../elements/formfield';
 import { selectDefinition } from '../../../elements/select';
 import { switchDefinition } from '../../../elements/switch';
 import { textfieldDefinition } from '../../../elements/textfield';
-
 import {localize} from "../../localize";
 
-// const DEFAULT_LAYOUT_TYPES = ["masonry", "sidebar", "panel"];
+const DEFAULT_LAYOUT_TYPES = ["masonry", "sidebar", "panel"];
 
 @customElement(card.editor.prefixedtype)
-export class MagicSectionCardEditor extends LitElement {
+export class MagicSectionCardEditor extends ScopedRegistryHost(LitElement) {
     @property({ attribute: false }) public hass?: HomeAssistant;
 
     @state() private _config?: MagicSectionCardConfig;
@@ -168,7 +167,7 @@ export class MagicSectionCardEditor extends LitElement {
         const selected = this._selectedCard;
         // const numcards = this._config.cards.length;
         return html`
-      <p>Hello I am the design tab. Yeah!</p>
+      <p>Hello I am the design tab.</p>
     `;
     }
 
